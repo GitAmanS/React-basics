@@ -4,8 +4,10 @@ const Expense = (props) => {
   return (
     <div className='expense-item'>
         <div className='expense-item-description'>
-            <h2>{props.expense}</h2>
-            <div className='expense-item-price'>Rs{props.price}</div>
+            <h2>{props.expense.name}</h2>
+            <h2>{props.expense.date.toLocaleString()}</h2>
+
+            <div className='expense-item-price'>Rs{props.expense.price}</div>
         </div>
 
     </div>
