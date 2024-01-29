@@ -1,7 +1,8 @@
 import Expense from "./components/Expenses/Expense";
 import "./App.css"
+import { useState } from "react";
 function App() {
-  const expenses=[
+  const expenses1=[
     {
       id:"1",
       name:"Petrol",
@@ -21,13 +22,21 @@ function App() {
       date:new Date(2024,5,12),
     }
   ] 
+  const [expenses, setExpenses] = useState(expenses1);
+
+  function deleteExpense(id){
+    console.log("clicked");
+    setExpenses((ExpenseArr)=>{
+      return ExpenseArr.filter((expenseElement)=>expenseElement.id!==id)
+    })
+  }
   return (
     <div className="App">
       <h1>Expenses</h1>
 
       
         
-        <Expense items={expenses} />
+        <Expense items={expenses} deleteExpense={deleteExpense}/>
        
       
       
