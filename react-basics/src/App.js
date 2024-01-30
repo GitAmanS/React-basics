@@ -6,6 +6,24 @@ import ExpenseForm from "./components/Expenses/ExpenseForm";
 let id = 4;
 function App() {
   const expenses1=[
+    {
+      id:"1",
+      name:"Petrol",
+      price:"100",
+      date:new Date(2024,5,12),
+    },
+    {
+      id:"2",
+      name:"Food",
+      price:"10",
+      date:new Date(2024,5,12),
+    },
+    {
+      id:"3",
+      name:"Movie",
+      price:"200",
+      date:new Date(2024,5,12),
+    }
   ] 
   const [expenses, setExpenses] = useState(expenses1);
   

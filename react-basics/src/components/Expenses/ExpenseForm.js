@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-
+import "./ExpenseForm.css"
 const ExpenseForm = (props) => {
-  const [formData, setFormData] = useState({ id: "", name: "", price: "", date: new Date() });
+  const [formData, setFormData] = useState({ id: "", name: "", price: "", date: "" });
 
   function handleInputChange(e) {
     const { name, value } = e.target;
@@ -13,7 +13,7 @@ const ExpenseForm = (props) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const formattedDate = new Date(formData.date + 'T00:00:00'); // Assuming formData.date is in "yyyy-mm-dd" format
+    const formattedDate = new Date(formData.date + 'T00:00:00'); 
     props.addExpense({ ...formData, date: formattedDate });
     setFormData({ id: "", name: "", price: "", date: new Date() });
   }
@@ -46,7 +46,7 @@ const ExpenseForm = (props) => {
           <input
             type="date"
             name="date"
-            value={formData.date.toISOString().split('T')[0]}
+            value={formData.date}
             onChange={handleInputChange}
           />
         </label>
