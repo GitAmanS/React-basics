@@ -16,7 +16,7 @@ const ExpenseItem = (props) => {
         <h2>{props.title}</h2>
         <div className='expense-item__price'>${price}</div>
       </div>
-      <button onClick={()=>{props.deleteExpense(props.id)}}>Delete</button>
+      <button onClick={()=>{props.deleteExpense(props.key)}}>Delete</button>
       <button onClick={changePrice}>Change Price</button>
     </Card>
   );
