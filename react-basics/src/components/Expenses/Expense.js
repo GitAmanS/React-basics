@@ -16,8 +16,9 @@ const Expenses = (props) => {
   return (
     <Card className="expenses">
       <ExpensesFilter filterExpenseByYear={filterExpenseByYear}/>
-      {
-        filteredExpenses.map((expense)=>{
+      { filteredExpenses.length ===1 ? <h1>Only single Expense here. Please add more...</h1> : ("")}
+      
+        {filteredExpenses.map((expense)=>{
           return <ExpenseItem
             key={expense.id}
             title={expense.name}
