@@ -3,7 +3,7 @@ import "./App.css"
 import { useState } from "react";
 import ExpenseForm from "./components/Expenses/ExpenseForm";
 
-let id = 4;
+let id = 5;
 function App() {
   const expenses1=[
     {
@@ -23,10 +23,19 @@ function App() {
       name:"Movie",
       price:"200",
       date:new Date(2024,5,12),
+    },
+    {
+      id:"4",
+      name:"Movie",
+      price:"200",
+      date:new Date(2023,5,12),
     }
   ] 
   const [expenses, setExpenses] = useState(expenses1);
-  
+  // function filterExpenseByYear(year){
+  //   const filteredExpenses = expenses1.filter(expense => expense.date.getFullYear() === year);
+  //   setExpenses(filteredExpenses);
+  // }
   function deleteExpense(id){
     setExpenses((ExpenseArr)=>{
       return ExpenseArr.filter((expenseElement)=>expenseElement.id!==id)
@@ -49,7 +58,7 @@ function App() {
 
       
         <ExpenseForm addExpense={addExpense}/>
-        <Expense items={expenses} deleteExpense={deleteExpense}/>
+        <Expense items={expenses} deleteExpense={deleteExpense} />
        
       
       
